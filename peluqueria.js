@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
-//const rutacliente = require('./vista/ClienteRutas');
+const rutaacliente = require('./vista/admin/RutaCrearCliente');
 //const rutaadmin = require('./vista/AdminRutas');
-//const app = express();
+const app = express();
 const PORT = process.env.PORT || 3333;
 
 // Midleware
@@ -19,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rutas 
-//app.use('/', rutacliente);
+app.use('/', rutaacliente);
 //app.use('/seguridad', rutaadmin);
 
 app.get('/', (req, res) => {

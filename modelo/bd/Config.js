@@ -13,10 +13,10 @@ requiredEnvVars.forEach((key) => {
 });
 
 const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '12022023Ls.',
+  database: process.env.DB_NAME || 'bd_peluqueria',
 };
 
 module.exports = dbConfig;
