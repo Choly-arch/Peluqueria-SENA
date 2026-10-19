@@ -26,5 +26,3 @@ class Conexion {
       });
   }
 }
-
-module.exports = new Conexion();  // Exporta una instancia única de la clase
