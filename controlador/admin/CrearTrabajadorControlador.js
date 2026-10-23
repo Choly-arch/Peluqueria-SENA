@@ -3,10 +3,10 @@ const modelo = require('../../modelo/admin/CrearTrabajadorModelo');
 class CrearTrabajadorControlador {
 
      static async crearTrabajador(req, res) {
-        const { t1: tipoD, t2: numeroD, t3: nom, t4: dir, t5: tel, t6: correo, t7: contras,} = req.body;
+        const { t1: tipoD, t2: numeroD, t3: nom, t4: dir, t5: tel, t6: correo, t7: contras } = req.body;
         // ------------👁️‍🗨️ validaciones👁️‍🗨️----------------
         // Validar campos vacíos❓❓❓❓❓----------------
-        const errorCampos = CrearTrabajadorControlador.verCampos(tipoD, numeroD, nom, dir, tel, correo, contras,);
+        const errorCampos = CrearTrabajadorControlador.verCampos(tipoD, numeroD, nom, dir, tel, correo, contras );
         if (errorCampos) {
             return res.status(400).json({ error: errorCampos });
         }
@@ -51,7 +51,7 @@ class CrearTrabajadorControlador {
         }
         
         try {
-            const result = await modelo.crearTrabajadores(tipoD, numeroD, nom, dir, tel, correo, contras,);
+            const result = await modelo.crearTrabajadores(tipoD, numeroD, nom, dir, tel, correo, contras );
             res.status(201).json({ mensaje: 'Trabajador creado con exito', id: result.insertId });
         } catch (err) {
             if (err.message.includes("Duplicate entry")) {
