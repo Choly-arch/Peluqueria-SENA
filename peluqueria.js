@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const rutaadmin = require('./vista/admin/RutasAdmin');
-const rutaclientes = require('./vista/clientes/RutasClientes');
-// const rutaatrabajador = require('./vista/admin/RutaCrearTrabajador');
+const rutaclientes = require('./vista/admin/clientes/RutasClientes');
 //const rutaadmin = require('./vista/AdminRutas');
 const app = express();
 const PORT = process.env.PORT || 3333;
